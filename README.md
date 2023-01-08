@@ -1,29 +1,19 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project is a demo to put an application into a container image, and pass parameters to the application.
 
-### What is this repository for? ###
+### Application ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+1. read 2 parameters.
+2. show the 2 parameters on a web.
 
-### How do I get set up? ###
+### We know the following 3 methods to pass parameters to an application in a container ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* from command line.
+  * example: **./containerdemo -inputfrom cmd -parameter1 asdf -parameter2 zxcv**
+* from environment variable.
+  * example: **./containerdemo -inputfrom env**
+* from config file. 
+  * example: **bash run.sh "./containerdemo" "-inputfrom" "config" "-config" "para4Sh.conf"**
+    1. Firstly, use the script **run.sh** to render the placeholders in the config file.
+    2. Then, execute **containerdemo** to read parameters from the config file.
