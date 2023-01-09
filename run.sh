@@ -12,5 +12,5 @@ sed -i "s/\[\[PARAMETER1\]\]/${PARAMETER1}/g" ${CURRENT_DIR}/para4Sh.conf
 sed -i "s/\[\[PARAMETER2\]\]/${PARAMETER2}/g" ${CURRENT_DIR}/para4Sh.conf
 
 # run the application
-cd ${CURRENT_DIR}
+cd ${CURRENT_DIR} || echo "cd ${CURRENT_DIR} fails"
 exec "$@"
